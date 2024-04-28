@@ -1,17 +1,25 @@
 public class Calculator {
-    public int add(int a, int b){
-        //TODO inser your realisation in method add
+    public double add(double a, double b){
+        return a + b;
     }
-    public int dif(int a, int b){
-        //TODO inser your realisation in method dif
+    public double dif(double a, double b){
+        return a - b;
     }
-    public int div(int a, int b){
-        //TODO inser your realisation in method div
+    public double div(double a, double b){
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero is not allowed.");
+        }
+        return a / b;
     }
-    public int times(int a, int b){
-        //TODO inser your realisation in method times
+    public double times(double a, double b){
+        return a * b;
     }
-    public int solver(){
-        //TODO inser your realisation in method solver
+    public double solver(){
+        // Решаем уравнение: 2 * (3 + 4) - 5 / 2
+        double sum = add(3, 4);
+        double product = times(2, sum);
+        double divisionResult = div(5, 2);
+        double result = dif(product, divisionResult);
+        return result;
     }
 }
