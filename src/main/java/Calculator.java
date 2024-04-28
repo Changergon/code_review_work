@@ -1,22 +1,25 @@
 public class Calculator {
-    public int add(int a, int b){
+    public double add(double a, double b){
         return a + b;
     }
-    public int dif(int a, int b){
+    public double dif(double a, double b){
         return a - b;
     }
-    public int div(int a, int b){
+    public double div(double a, double b){
         if (b == 0) {
-            throw new ArithmeticException("Деление на ноль не допускается.");
+            throw new ArithmeticException("Division by zero is not allowed.");
         }
         return a / b;
     }
-    public int times(int a, int b){
+    public double times(double a, double b){
         return a * b;
     }
-    public int solver(){
-        // Решим уравнение: 2 * (3 + 4) - 5 / 2
-        int result = times(2, add(3, 4)) - div(5, 2);
+    public double solver(){
+        // Решаем уравнение: 2 * (3 + 4) - 5 / 2
+        double sum = add(3, 4);
+        double product = times(2, sum);
+        double divisionResult = div(5, 2);
+        double result = dif(product, divisionResult);
         return result;
     }
 }
